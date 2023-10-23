@@ -3,7 +3,86 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
+        <title>PWA</title>
+        <link rel="manifest" href="/manifest.json" />
+        <link rel="icon" href="/icon.png" />
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f0f0f0;
+                margin: 0;
+                padding: 0;
+            }
+
+            header {
+                background-color: #59b0a7;
+                color: #fff;
+                text-align: center;
+                padding: 10px;
+            }
+
+            h1 {
+                margin: 0;
+            }
+
+            .article {
+                background-color: #fff;
+                margin: 10px;
+                padding: 15px;
+                border-radius: 5px;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            }
+
+            .article-title {
+                font-size: 18px;
+                font-weight: bold;
+            }
+
+            .article-content {
+                font-size: 14px;
+                margin-top: 10px;
+            }
+
+            footer {
+                background-color: #59b0a7;
+                color: #fff;
+                text-align: center;
+                padding: 10px;
+            }
+        </style>
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     </head>
-    <body> </body>
+    <body>
+        <div id="app">
+            <header>
+                <h1>文章網站</h1>
+            </header>
+            <div class="article" v-for="article in articles" :key="article.id">
+                <div class="article-title">{{ article.title }}</div>
+                <div class="article-content">{{ article.content }}</div>
+            </div>
+            <footer> &copy; 2023 文章網站 </footer>
+        </div>
+        <script>
+            let article_array = [];
+            for (let i = 1; i < 21; i++) {
+                let article = {
+                    id: i,
+                    title: '文章標題 ' + i,
+                    content: '這是文章內容的部分文字。你可以在這裡添加更多內容。',
+                };
+                article_array.push(article);
+            }
+
+            const app = Vue.createApp({
+                data() {
+                    return {
+                        articles: article_array,
+                    };
+                },
+            });
+
+            app.mount('#app');
+        </script>
+    </body>
 </html>
