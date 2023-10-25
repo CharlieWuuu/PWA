@@ -6,7 +6,13 @@
         <title>PWA</title>
         <link rel="manifest" href="/manifest.json" />
         <link rel="icon" href="/icon.png" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta name="viewport" content="initial-scale=1, viewport-fit=cover" />
         <style>
+            header {
+                padding-top: env(safe-area-inset-top);
+                position: fixed;
+            }
             body {
                 font-family: Arial, sans-serif;
                 background-color: #f0f0f0;
