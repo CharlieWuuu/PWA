@@ -10,13 +10,6 @@
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
         <meta name="viewport" content="initial-scale=1, viewport-fit=cover, user-scalable=no" />
         <style>
-            @media screen and (display-mode: standalone) {
-                header {
-                    padding-top: env(safe-area-inset-top);
-                    position: fixed;
-                    width: 100%;
-                }
-            }
             body {
                 font-family: Arial, sans-serif;
                 background-color: #f0f0f0;
@@ -30,6 +23,13 @@
                 text-align: center;
                 padding: 10px;
             }
+            @media screen and (display-mode: standalone) {
+                header {
+                    height: 88px !important;
+                    position: fixed;
+                    width: 100%;
+                }
+            }
 
             h1 {
                 margin: 0;
@@ -41,6 +41,11 @@
                 padding: 15px;
                 border-radius: 5px;
                 box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            }
+            @media screen and (display-mode: standalone) {
+                .article {
+                    padding-top: 88px;
+                }
             }
 
             .article-title {
