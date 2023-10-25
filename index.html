@@ -95,9 +95,8 @@
                 article_array.push(article);
             }
 
-            let locurl = document.location.href;
             let displayMode;
-            if (locurl.indexOf('standalone.html') != -1) {
+            if (window.matchMedia('(display-mode: standalone)').matches) {
                 displayMode = 'app is running standalone';
             } else {
                 displayMode = 'app is running in normal browser mode';
