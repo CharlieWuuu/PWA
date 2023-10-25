@@ -17,8 +17,14 @@
                 padding: 0;
                 -webkit-tap-highlight-color: transparent;
             }
+
             #app {
                 position: absolute;
+            }
+            @media screen and (display-mode: standalone) {
+                #app {
+                    margin-top: 88px;
+                }
             }
 
             header {
