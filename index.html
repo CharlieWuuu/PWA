@@ -66,6 +66,7 @@
         <div id="app">
             <header>
                 <h1>文章網站</h1>
+                <p>顯示模式：{{ displayMode }}</p>
             </header>
             <div class="article" v-for="article in articles" :key="article.id">
                 <div class="article-title">{{ article.title }}</div>
@@ -88,6 +89,7 @@
                 data() {
                     return {
                         articles: article_array,
+                        displayMode: window.matchMedia('(display-mode: standalone)').media,
                     };
                 },
             });
