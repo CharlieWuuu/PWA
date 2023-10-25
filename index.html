@@ -17,6 +17,9 @@
                 padding: 0;
                 -webkit-tap-highlight-color: transparent;
             }
+            #app {
+                position: absolute;
+            }
 
             header {
                 background-color: #5a0fc8;
@@ -35,18 +38,17 @@
             h1 {
                 margin: 0;
             }
-
+            @media screen and (display-mode: standalone) {
+                section {
+                    margin-top: 120px;
+                }
+            }
             .article {
                 background-color: #fff;
                 margin: 10px;
                 padding: 15px;
                 border-radius: 5px;
                 box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            }
-            @media screen and (display-mode: standalone) {
-                .article {
-                    padding-top: 88px;
-                }
             }
 
             .article-title {
@@ -74,10 +76,12 @@
                 <h1>文章網站</h1>
                 <p>顯示模式：{{ displayMode }}</p>
             </header>
-            <div class="article" v-for="article in articles" :key="article.id">
-                <div class="article-title">{{ article.title }}</div>
-                <div class="article-content">{{ article.content }}</div>
-            </div>
+            <section>
+                <div class="article" v-for="article in articles" :key="article.id">
+                    <div class="article-title">{{ article.title }}</div>
+                    <div class="article-content">{{ article.content }}</div>
+                </div>
+            </section>
             <footer> &copy; 2023 文章網站 </footer>
         </div>
         <script>
