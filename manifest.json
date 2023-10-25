@@ -2,13 +2,14 @@
     "name": "PWA 範例",
     "short_name": "PWA",
     "description": "這是一個簡單的 PWA 範例。",
-    "start_url": ".",
+    "start_url": "/",
     "display": "standalone",
-    "background_color": "#ffffff",
-    "theme_color": "#3367D6",
+    "orientation": "portrait",
+    "background_color": "#5a0fc8",
+    "theme_color": "#5a0fc8",
     "icons": [
         {
-            "src": "/icon.png",
+            "src": "./icon.png",
             "sizes": "192x192",
             "type": "image/png"
         }
