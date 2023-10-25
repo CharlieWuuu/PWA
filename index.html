@@ -85,11 +85,19 @@
                 article_array.push(article);
             }
 
+            let locurl = document.location.href;
+            let displayMode;
+            if (locurl.indexOf('standalone.html') != -1) {
+                displayMode = 'app is running standalone';
+            } else {
+                displayMode = 'app is running in normal browser mode';
+            }
+
             const app = Vue.createApp({
                 data() {
                     return {
                         articles: article_array,
-                        displayMode: window.matchMedia('(display-mode: standalone)').media,
+                        displayMode: displayMode,
                     };
                 },
             });
