@@ -2,7 +2,7 @@
     "name": "PWA 範例",
     "short_name": "PWA",
     "description": "這是一個簡單的 PWA 範例。",
-    "start_url": "/",
+    "start_url": ".",
     "display": "standalone",
     "background_color": "#ffffff",
     "theme_color": "#3367D6",
