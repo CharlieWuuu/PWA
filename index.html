@@ -92,23 +92,16 @@
     <script>
       if ('serviceWorker' in navigator) {
         navigator.serviceWorker
-          .register('service-worker.js', { scope: './' })
-          .then(function (registration) {
-            document.querySelector('#status').textContent = 'succeeded';
+          .register('./service-worker.js')
+          .then((registration) => {
+            console.log('Service worker registration succeeded:', registration);
+            // At this point, you can optionally do something
+            // with registration. See https://developer.mozilla.org/zh-CN/docs/Web/API/ServiceWorkerRegistration
           })
-          .catch(function (error) {
-            document.querySelector('#status').textContent = error;
+          .catch((error) => {
+            console.error(`Service worker registration failed: ${error}`);
           });
-      } else {
-        // The current browser doesn't support service workers.
-        let aElement = document.createElement('a');
-        aElement.href = `
-     http://www.chromium.org/blink/serviceworker/service-worker-faq
-  `;
-        aElement.textContent = 'unavailable';
-        document.querySelector('#status').appendChild(aElement);
       }
-
       let article_array = [];
       for (let i = 1; i < 21; i++) {
         let article = {
