@@ -1,123 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>PWA</title>
-        <link rel="manifest" href="manifest.json" />
-        <link rel="icon" href="icon.png" />
-        <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-        <meta name="viewport" content="initial-scale=1, viewport-fit=cover, user-scalable=no" />
-        <style>
-            body {
-                font-family: Arial, sans-serif;
-                background-color: #5a0fc8;
-                margin: 0;
-                padding: 0;
-                -webkit-tap-highlight-color: transparent;
-            }
-
-            #app {
-                position: absolute;
-                width: 100%;
-                background-color: #f0f0f0;
-            }
-            header {
-                background-color: #5a0fc8;
-                color: #fff;
-                text-align: center;
-                padding: 10px;
-            }
-            @media screen and (display-mode: standalone) {
-                header {
-                    height: 148px !important;
-                    position: fixed;
-                    width: 100%;
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: end;
-                    padding: 0;
-                }
-            }
-
-            h1 {
-                margin: 0;
-            }
-            @media screen and (display-mode: standalone) {
-                .container {
-                    margin-top: 160px;
-                }
-            }
-            .article {
-                background-color: #fff;
-                margin: 10px;
-                padding: 15px;
-                border-radius: 5px;
-                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            }
-
-            .article-title {
-                font-size: 18px;
-                font-weight: bold;
-            }
-
-            .article-content {
-                font-size: 14px;
-                margin-top: 10px;
-            }
-
-            footer {
-                background-color: #5a0fc8;
-                color: #fff;
-                text-align: center;
-                padding: 10px;
-            }
-        </style>
-        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    </head>
-    <body>
-        <div id="app">
-            <header>
-                <h1>PWA介紹</h1>
-                <p>顯示模式：{{ displayMode }}</p>
-            </header>
-            <div class="container">
-                <div class="article" v-for="article in articles" :key="article.id">
-                    <div class="article-title">{{ article.title }}</div>
-                    <div class="article-content">{{ article.content }}</div>
-                </div>
-                <footer> &copy; 2023 文章網站 </footer>
-            </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PWA 介紹大全</title>
+    <link rel="manifest" href="manifest.json" />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="icon" href="icon.png" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+    <meta
+      name="viewport"
+      content="initial-scale=1, viewport-fit=cover, user-scalable=no"
+    />
+    <meta name="theme-color" content="#5a0fc8" />
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <header>
+        <h1>PWA介紹</h1>
+        <p>顯示模式：{{ displayMode }}</p>
+      </header>
+      <div class="container">
+        <div class="article" v-for="article in articles" :key="article.id">
+          <div class="article-title">{{ article.title }}</div>
+          <div class="article-content">{{ article.content }}</div>
         </div>
-        <script>
-            let article_array = [];
-            for (let i = 1; i < 21; i++) {
-                let article = {
-                    id: i,
-                    title: '文章標題 ' + i,
-                    content: '這是文章內容的部分文字。你可以在這裡添加更多內容。',
-                };
-                article_array.push(article);
-            }
+        <footer>&copy; 2023 文章網站</footer>
+      </div>
+    </div>
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('');
+      }
 
-            let displayMode;
-            if (window.matchMedia('(display-mode: standalone)').matches) {
-                displayMode = 'app is running standalone';
-            } else {
-                displayMode = 'app is running in normal browser mode';
-            }
+      let article_array = [];
+      for (let i = 1; i < 21; i++) {
+        let article = {
+          id: i,
+          title: '文章標題 ' + i,
+          content: '這是文章內容的部分文字。你可以在這裡添加更多內容。',
+        };
+        article_array.push(article);
+      }
 
-            const app = Vue.createApp({
-                data() {
-                    return {
-                        articles: article_array,
-                        displayMode: displayMode,
-                    };
-                },
-            });
+      let displayMode;
+      if (window.matchMedia('(display-mode: standalone)').matches) {
+        displayMode = 'app is running standalone';
+      } else {
+        displayMode = 'app is running in normal browser mode';
+      }
 
-            app.mount('#app');
-        </script>
-    </body>
+      const app = Vue.createApp({
+        data() {
+          return {
+            articles: article_array,
+            displayMode: displayMode,
+          };
+        },
+      });
+
+      app.mount('#app');
+    </script>
+  </body>
 </html>
