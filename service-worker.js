@@ -4,3 +4,6 @@ workbox.routing.registerRoute(({ request }) => {
   request.destination === 'image', new workbox.strategies.CacheFirst();
   alert(123);
 });
+
+console.log(123);
+console.log(workbox);
