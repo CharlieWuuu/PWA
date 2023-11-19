@@ -39,6 +39,7 @@ h1 {
     margin-top: 160px;
   }
 }
+
 .article {
   background-color: #fff;
   margin: 10px;
@@ -62,4 +63,21 @@ footer {
   color: #fff;
   text-align: center;
   padding: 10px;
+}
+
+.add-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #dfcbfc;
+  color: #6c6c6c;
+  border: none;
+  border-radius: 8px;
+  padding: 4px 8px;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+  transition: all 0.5s ease-in-out;
+  cursor: pointer;
+}
+.add-button:hover {
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
 }/*# sourceMappingURL=style.css.map */
