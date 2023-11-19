@@ -114,9 +114,9 @@
       }
       let displayMode;
       if (window.matchMedia('(display-mode: standalone)').matches) {
-        displayMode = 'app is running standalone';
+        displayMode = 'PWA 模式';
       } else {
-        displayMode = 'app is running in normal browser mode';
+        displayMode = '瀏覽器模式';
       }
       const app = Vue.createApp({
         data() {
