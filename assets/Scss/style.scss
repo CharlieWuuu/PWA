@@ -1,0 +1,87 @@
+$bgc: linear-gradient(90deg, rgba(207, 234, 255, 1) 0%, rgba(240, 243, 255, 1) 50%, rgba(223, 205, 255, 1) 100%);
+$blue: rgba(207, 234, 255, 1);
+$purple: rgba(223, 205, 255, 1);
+$black: #474747;
+
+body {
+    font-family: Arial, sans-serif;
+    background: $bgc;
+    margin: 0;
+    padding: 0;
+    -webkit-tap-highlight-color: transparent;
+    min-height: 100vh;
+}
+
+#app {
+    position: absolute;
+    width: 100%;
+    background-color: #fff;
+
+    header {
+        background: $bgc;
+        color: $black;
+        text-align: center;
+        padding: 10px;
+
+        @media screen and (display-mode: standalone) {
+            height: 148px !important;
+            position: fixed;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: end;
+            padding: 0;
+        }
+        h1 {
+            margin: 0;
+        }
+        .addBtn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: white;
+            color: $black;
+            border: none;
+            border-radius: 8px;
+            padding: 4px 8px;
+            box-shadow: 0 0 20px 0 darken($purple, 10);
+            transition: all 0.5s ease-in-out;
+            cursor: pointer;
+            &:hover {
+                box-shadow: 0 0 20px 0 darken($purple, 20);
+            }
+        }
+    }
+
+    .container {
+        @media screen and (display-mode: standalone) {
+            margin-top: 160px;
+        }
+
+        .article {
+            background-color: #fff;
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 4px $purple;
+            max-width: 1080px;
+
+            &__title {
+                font-size: 18px;
+                font-weight: bold;
+            }
+
+            &__content {
+                font-size: 14px;
+                margin-top: 10px;
+            }
+        }
+
+        footer {
+            background: $bgc;
+            color: $black;
+            text-align: center;
+            padding: 10px 0 40px 0;
+        }
+    }
+}
