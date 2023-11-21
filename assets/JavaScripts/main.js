@@ -75,7 +75,7 @@ let article_array = [
         content: '探討如何在不同平台（iOS、Android等）上部署PWA，並適應各平台的獨特需求和限制。',
     },
 ];
-
+//
 let displayMode;
 if (window.matchMedia('(display-mode: standalone)').matches) {
     displayMode = 'PWA 模式';
@@ -92,31 +92,3 @@ const app = Vue.createApp({
     },
 });
 app.mount('#app');
-
-let deferredPrompt;
-const addBtn = document.querySelector('.addBtn');
-addBtn.style.display = 'none';
-
-window.addEventListener('beforeinstallprompt', (e) => {
-    // Chrome 67以前のバージョンでプロンプトが自動的に表示されないようにする
-    e.preventDefault();
-    // 後で発生させることができるように、イベントを隠しておく。
-    deferredPrompt = e;
-    // ホーム画面に内側へ追加できることをユーザーに通知する UI の更新
-    addBtn.style.display = 'block';
-    addBtn.addEventListener('click', (e) => {
-        // プロンプトを表示
-        deferredPrompt.prompt();
-        // ユーザーがプロンプトに応答するのを待つ
-        deferredPrompt.userChoice.then((choiceResult) => {
-            if (choiceResult.outcome === 'accepted') {
-                console.log('使用者接受 A2HS 的請求。');
-                // A2HS ボタンを表示するユーザーインターフェイスを非表示にします。
-                addBtn.style.display = 'none';
-            } else {
-                console.log('使用者拒絕 A2HS 的請求。');
-            }
-            deferredPrompt = null;
-        });
-    });
-});
