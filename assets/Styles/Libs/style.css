@@ -54,7 +54,7 @@ body {
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0 0 4px rgb(223, 205, 255);
-  width: 90%;
+  width: calc(90% - 40px);
   max-width: 1080px;
 }
 #app .container .article__title {
