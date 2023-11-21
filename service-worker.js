@@ -6,7 +6,7 @@ var CACHE_NAME = 'PWA';
 self.addEventListener('install', (e) => {
     e.waitUntil(
         caches.open(cacheName).then((cache) => {
-            return cache.addAll(['/', './index.html', './assets/JavaScripts/manifest.json']);
+            return cache.addAll(['/', './index.html', './manifest.json']);
         }),
     );
 });
