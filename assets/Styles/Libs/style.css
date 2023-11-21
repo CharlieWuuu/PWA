@@ -18,17 +18,6 @@ body {
   text-align: center;
   padding: 10px;
 }
-@media screen and (display-mode: standalone) {
-  #app header {
-    height: 148px !important;
-    position: fixed;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: end;
-    padding: 0;
-  }
-}
 #app header h1 {
   margin: 0;
 }
@@ -47,11 +36,6 @@ body {
 }
 #app header .addBtn:hover {
   box-shadow: 0 0 20px 0 #9e67ff;
-}
-@media screen and (display-mode: standalone) {
-  #app .container {
-    margin-top: 160px;
-  }
 }
 #app .container .article {
   background-color: #fff;
@@ -79,4 +63,4 @@ body {
 #app .container footer .shareBtn {
   text-decoration: underline;
   cursor: pointer;
-}
+}/*# sourceMappingURL=style.css.map */
