@@ -89,6 +89,7 @@ const app = Vue.createApp({
         return {
             articles: article_array,
             displayMode: displayMode,
+            vue: 'vue 已安裝',
         };
     },
 });
