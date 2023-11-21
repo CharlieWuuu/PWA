@@ -1,3 +1,4 @@
+alert('這個訊息來自main.js');
 let article_array = [
     {
         id: 0,

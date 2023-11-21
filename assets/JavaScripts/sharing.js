@@ -1,3 +1,4 @@
+alert('這個訊息來自sharing.js');
 const shareBtn = document.querySelector('.shareBtn');
 
 shareBtn.onclick = async (filesArray) => {
