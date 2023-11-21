@@ -1,6 +1,6 @@
 {
-    "name": "PWA 範例",
-    "short_name": "PWA",
+    "name": "PWA 簡單設定版",
+    "short_name": "PWA Simple",
     "description": "這是一個簡單的 PWA 範例。",
     "start_url": ".",
     "display": "standalone",
