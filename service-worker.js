@@ -1,3 +1,6 @@
+importScripts('https://cdnjs.cloudflare.com/ajax/libs/workbox-sw/7.0.0/workbox-sw.js');
+workbox.routing.registerRoute(new RegExp('https://unpkg.com/vue@3/dist/vue.global.js'), new workbox.strategies.CacheFirst());
+
 var CACHE_NAME = 'PWA';
 
 self.addEventListener('install', (e) => {
