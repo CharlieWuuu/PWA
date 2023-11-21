@@ -75,7 +75,7 @@ let article_array = [
         content: '探討如何在不同平台（iOS、Android等）上部署PWA，並適應各平台的獨特需求和限制。',
     },
 ];
-//
+
 let displayMode;
 if (window.matchMedia('(display-mode: standalone)').matches) {
     displayMode = 'PWA 模式';
