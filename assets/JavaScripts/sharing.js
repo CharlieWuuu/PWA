@@ -1,4 +1,4 @@
-alert('這個訊息來自sharing.js');
+document.getElementById('sharing').innerText = 'sharing.js 已安裝';
 const shareBtn = document.querySelector('.shareBtn');
 
 shareBtn.onclick = async (filesArray) => {

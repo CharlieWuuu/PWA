@@ -75,8 +75,10 @@ body {
   color: #474747;
   text-align: center;
   padding: 10px 0 40px 0;
+  display: flex;
+  flex-direction: column;
 }
 #app .container footer .shareBtn {
   text-decoration: underline;
   cursor: pointer;
-}/*# sourceMappingURL=style.css.map */
+}

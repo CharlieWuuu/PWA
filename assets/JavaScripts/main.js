@@ -1,4 +1,4 @@
-alert('這個訊息來自main.js');
+document.getElementById('main').innerText = 'main.js 已安裝';
 let article_array = [
     {
         id: 0,

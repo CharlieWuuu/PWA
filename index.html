@@ -87,21 +87,23 @@
                     <div class="article__title">{{ article.title }}</div>
                     <div class="article__content">{{ article.content }}</div>
                 </div>
-                <footer>© 2023 PWA介紹 | <span class="shareBtn">分享</span> | v0.3 | <span id="log">SW訊息</span></footer>
+                <footer>
+                    <div class="info">© 2023 PWA介紹 | <span class="shareBtn">分享</span> | v0.4</div>
+                    <div class="info"><span id="register">register.js</span> | <span id="main">main.js</span></div>
+                    <div class="info"><span id="sharing">sharing.js</span> | <span id="sw">sw.js</span></div>
+                </footer>
             </div>
         </div>
         <script src="./assets/JavaScripts/register.js"></script>
         <script src="./assets/JavaScripts/main.js"></script>
         <script src="./assets/JavaScripts/sharing.js"></script>
         <script>
-            alert('這個訊息來自index.html');
-
             navigator.serviceWorker.addEventListener('message', (event) => {
                 if (event.data && event.data.type === 'log') {
                     console.log(event.data.message);
 
                     // 如果你想將消息顯示在 DOM 中，可以使用以下方式：
-                    document.getElementById('log').innerText = event.data.message;
+                    document.getElementById('sw').innerText = event.data.message;
                 }
             });
         </script>

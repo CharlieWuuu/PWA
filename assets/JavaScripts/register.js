@@ -1,4 +1,4 @@
-alert('這個訊息來自register.js');
+document.getElementById('register').innerText = 'register.js 已安裝';
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
         navigator.serviceWorker
@@ -8,7 +8,7 @@ if ('serviceWorker' in navigator) {
                 const sw = registration.active || registration.installing || registration.waiting;
 
                 // 向 Service Worker 發送消息
-                sw.postMessage({ type: 'log', message: '已安裝 Service Worker' });
+                sw.postMessage({ type: 'log', message: 'SW已安裝' });
             })
             .catch((error) => {
                 console.error('Service Worker registration failed:', error);
