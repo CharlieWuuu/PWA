@@ -1,5 +1,5 @@
 importScripts('https://cdnjs.cloudflare.com/ajax/libs/workbox-sw/7.0.0/workbox-sw.js');
-// workbox.routing.registerRoute(new RegExp('https://unpkg.com/vue@3/dist/vue.global.js'), new workbox.strategies.CacheFirst());
+workbox.routing.registerRoute(new RegExp('https://unpkg.com/vue@3/dist/vue.global.js'), new workbox.strategies.CacheFirst());
 
 workbox.routing.registerRoute(
     new RegExp('.*'), // 匹配所有 URL
