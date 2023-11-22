@@ -16,7 +16,7 @@ body {
   background: linear-gradient(90deg, rgb(207, 234, 255) 0%, rgb(240, 243, 255) 50%, rgb(223, 205, 255) 100%);
   color: #474747;
   text-align: center;
-  padding: 10px;
+  padding: 24px 10px 10px 10px;
 }
 @media screen and (display-mode: standalone) {
   #app header {
@@ -40,13 +40,19 @@ body {
   color: #474747;
   border: none;
   border-radius: 8px;
-  padding: 4px 8px;
-  box-shadow: 0 0 20px 0 #be9aff;
+  padding: 8px 12px;
+  box-shadow: 0 0 12px 0 #be9aff;
   transition: all 0.5s ease-in-out;
   cursor: pointer;
+  font-size: 16px;
 }
 #app header .addBtn:hover {
-  box-shadow: 0 0 20px 0 #9e67ff;
+  box-shadow: 0 0 12px 0 #9e67ff;
+}
+#app .container {
+  width: 80%;
+  max-width: 1080px;
+  margin: auto;
 }
 @media screen and (display-mode: standalone) {
   #app .container {
@@ -59,8 +65,7 @@ body {
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0 0 4px rgb(223, 205, 255);
-  width: calc(90% - 40px);
-  max-width: 1080px;
+  width: calc(100% - 40px);
 }
 #app .container .article__title {
   font-size: 18px;
@@ -70,7 +75,7 @@ body {
   font-size: 14px;
   margin-top: 10px;
 }
-#app .container footer {
+#app footer {
   background: linear-gradient(90deg, rgb(207, 234, 255) 0%, rgb(240, 243, 255) 50%, rgb(223, 205, 255) 100%);
   color: #474747;
   text-align: center;
@@ -78,7 +83,7 @@ body {
   display: flex;
   flex-direction: column;
 }
-#app .container footer .shareBtn {
+#app footer .shareBtn {
   text-decoration: underline;
   cursor: pointer;
-}
+}/*# sourceMappingURL=style.css.map */

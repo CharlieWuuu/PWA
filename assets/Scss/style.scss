@@ -21,7 +21,7 @@ body {
         background: $bgc;
         color: $black;
         text-align: center;
-        padding: 10px;
+        padding: 24px 10px 10px 10px;
 
         @media screen and (display-mode: standalone) {
             height: 148px !important;
@@ -43,17 +43,21 @@ body {
             color: $black;
             border: none;
             border-radius: 8px;
-            padding: 4px 8px;
-            box-shadow: 0 0 20px 0 darken($purple, 10);
+            padding: 8px 12px;
+            box-shadow: 0 0 12px 0 darken($purple, 10);
             transition: all 0.5s ease-in-out;
             cursor: pointer;
+            font-size: 16px;
             &:hover {
-                box-shadow: 0 0 20px 0 darken($purple, 20);
+                box-shadow: 0 0 12px 0 darken($purple, 20);
             }
         }
     }
 
     .container {
+        width: 80%;
+        max-width: 1080px;
+        margin: auto;
         @media screen and (display-mode: standalone) {
             margin-top: 160px;
         }
@@ -64,8 +68,7 @@ body {
             padding: 20px;
             border-radius: 5px;
             box-shadow: 0 0 4px $purple;
-            width: calc(90% - 40px);
-            max-width: 1080px;
+            width: calc(100% - 40px);
 
             &__title {
                 font-size: 18px;
@@ -77,18 +80,17 @@ body {
                 margin-top: 10px;
             }
         }
-
-        footer {
-            background: $bgc;
-            color: $black;
-            text-align: center;
-            padding: 10px 0 40px 0;
-            display: flex;
-            flex-direction: column;
-            .shareBtn {
-                text-decoration: underline;
-                cursor: pointer;
-            }
+    }
+    footer {
+        background: $bgc;
+        color: $black;
+        text-align: center;
+        padding: 10px 0 40px 0;
+        display: flex;
+        flex-direction: column;
+        .shareBtn {
+            text-decoration: underline;
+            cursor: pointer;
         }
     }
 }

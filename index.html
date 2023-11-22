@@ -83,29 +83,27 @@
                 <button class="addBtn">下載 App</button>
             </header>
             <div class="container">
+                <h2>文章</h2>
                 <div class="article" v-for="article in articles" :key="article.id">
                     <div class="article__title">{{ article.title }}</div>
                     <div class="article__content">{{ article.content }}</div>
                 </div>
-                <footer>
-                    <div class="info">© 2023 PWA介紹 | <span class="shareBtn">分享</span> | v0.4</div>
-                    <div class="info"><span id="register">register.js</span> | <span id="main">main.js</span></div>
-                    <div class="info"><span id="sharing">sharing.js</span> | <span id="sw">sw.js</span> | <span id="vue">{{ vue }}</span></div>
-                </footer>
+                <h2>網站狀態</h2>
+                <ul>
+                    <li id="register">register.js 未安裝</li>
+                    <li id="main">main.js 未安裝</li>
+                    <li id="sharing">sharing.js 未安裝</li>
+                    <li id="sw">Service Worker 未安裝</li>
+                    <li id="vue">{{ vue }}</li>
+                    <li>版本號：v0.5</li>
+                </ul>
             </div>
+            <footer>
+                <div class="info">© 2023 PWA介紹 | <span class="shareBtn">分享</span></div>
+            </footer>
         </div>
         <script src="./assets/JavaScripts/register.js"></script>
         <script src="./assets/JavaScripts/main.js"></script>
         <script src="./assets/JavaScripts/sharing.js"></script>
-        <script>
-            navigator.serviceWorker.addEventListener('message', (event) => {
-                if (event.data && event.data.type === 'log') {
-                    console.log(event.data.message);
-
-                    // 如果你想將消息顯示在 DOM 中，可以使用以下方式：
-                    document.getElementById('sw').innerText = event.data.message;
-                }
-            });
-        </script>
     </body>
 </html>
