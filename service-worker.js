@@ -25,3 +25,25 @@ self.addEventListener('message', (event) => {
         });
     }
 });
+
+// 監聽 Service Worker 收到的訊息事件
+self.addEventListener('message', (event) => {
+    // 檢查事件中是否包含數據，以及數據類型是否為 'sw'
+    if (event.data && event.data.type === 'dataSource') {
+        // 模擬一個檢查資料來源的邏輯，例如從網路獲取資料
+        const isLocalCache = checkIfDataIsFromLocalCache(event.data.url);
+
+        // 設定資料來源信息
+        const dataSource = isLocalCache ? '本地緩存' : '從網路';
+
+        // 向前端傳送資料來源信息
+        event.source.postMessage({ type: 'dataSource', message: dataSource });
+    }
+});
+
+// 模擬一個檢查資料來源的邏輯
+function checkIfDataIsFromLocalCache(url) {
+    // 這裡可以根據實際邏輯進行判斷，例如檢查是否存在於本地快取中
+    // 這裡只是一個簡單的範例
+    return url.includes('/local-cache/');
+}
