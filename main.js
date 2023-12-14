@@ -1,4 +1,3 @@
-document.getElementById('main').innerText = 'main.js 已安裝';
 let article_array = [
     {
         id: 0,
@@ -89,7 +88,6 @@ const app = Vue.createApp({
         return {
             articles: article_array,
             displayMode: displayMode,
-            vue: 'Vue 已安裝',
         };
     },
 });
