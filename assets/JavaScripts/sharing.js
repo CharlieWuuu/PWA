@@ -1,4 +1,4 @@
-document.getElementById('sharing').innerText = 'sharing.js 已安裝';
+// document.getElementById('sharing').innerText = 'sharing.js 已安裝';
 const shareBtn = document.querySelector('.shareBtn');
 
 shareBtn.onclick = async (filesArray) => {

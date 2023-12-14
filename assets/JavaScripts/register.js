@@ -1,4 +1,4 @@
-document.getElementById('register').innerText = 'register.js 已安裝';
+// document.getElementById('register').innerText = 'register.js 已安裝';
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
         navigator.serviceWorker
@@ -16,7 +16,7 @@ if ('serviceWorker' in navigator) {
                         console.log('發自register.js：' + event.data.message);
 
                         // 如果你想將消息顯示在 DOM 中，可以使用以下方式：
-                        document.getElementById('sw').innerText = event.data.message;
+                        // document.getElementById('sw').innerText = event.data.message;
                     }
                 });
             })

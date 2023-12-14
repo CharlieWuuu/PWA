@@ -1,4 +1,4 @@
-document.getElementById('main').innerText = 'main.js 已安裝';
+// document.getElementById('main').innerText = 'main.js 已安裝';
 let article_array = [
     {
         id: 0,
