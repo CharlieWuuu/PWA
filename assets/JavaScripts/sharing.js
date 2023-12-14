@@ -2,7 +2,6 @@ document.getElementById('sharing').innerText = 'sharing.js 已安裝';
 const shareBtn = document.querySelector('.shareBtn');
 
 shareBtn.onclick = async (filesArray) => {
-    console.log(123);
     if (navigator.canShare) {
         navigator.share({
             url: 'https://charliewuuu.github.io/PWA/',
