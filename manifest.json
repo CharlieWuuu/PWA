@@ -9,27 +9,27 @@
     "background_color": "rgb(223, 205, 255)",
     "icons": [
         {
-            "src": "assets/Images/manifest-icon-192.maskable.png",
+            "src": "assets/Images/manifest-icon-192.maskable.jpg",
             "sizes": "192x192",
-            "type": "image/png",
+            "type": "image/jpg",
             "purpose": "any"
         },
         {
-            "src": "assets/Images/manifest-icon-192.maskable.png",
+            "src": "assets/Images/manifest-icon-192.maskable.jpg",
             "sizes": "192x192",
-            "type": "image/png",
+            "type": "image/jpg",
             "purpose": "maskable"
         },
         {
-            "src": "assets/Images/manifest-icon-512.maskable.png",
+            "src": "assets/Images/manifest-icon-512.maskable.jpg",
             "sizes": "512x512",
-            "type": "image/png",
+            "type": "image/jpg",
             "purpose": "any"
         },
         {
-            "src": "assets/Images/manifest-icon-512.maskable.png",
+            "src": "assets/Images/manifest-icon-512.maskable.jpg",
             "sizes": "512x512",
-            "type": "image/png",
+            "type": "image/jpg",
             "purpose": "maskable"
         }
     ]
