@@ -25,3 +25,12 @@ if ('serviceWorker' in navigator) {
             });
     });
 }
+
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+        navigator.serviceWorker
+            .register('./service-worker.js')
+            .then(() => console.log('註冊成功'))
+            .catch(() => console.log('註冊成功'));
+    });
+}
